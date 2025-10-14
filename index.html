@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deniz Karatepe - Mechanical Engineering & R&D</title>
+    <title>Deniz Karatepe - Mechanical Engineer</title>
     <style>
         * {
             margin: 0;
@@ -11,77 +11,12 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #0A1628;
-            --secondary: #1A2332;
-            --accent: #3B82F6;
-            --accent-light: #60A5FA;
-            --text: #F1F5F9;
-            --text-dim: #94A3B8;
-            --card-bg: rgba(26, 35, 50, 0.6);
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(to bottom, #0A1628, #1A2332);
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1d1d1f;
+            background: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .gradient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.2;
-            animation: float 25s infinite ease-in-out;
-        }
-
-        .orb-1 {
-            width: 600px;
-            height: 600px;
-            background: var(--gradient-1);
-            top: -15%;
-            right: -10%;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 500px;
-            height: 500px;
-            background: var(--gradient-2);
-            bottom: -10%;
-            left: -10%;
-            animation-delay: 7s;
-        }
-
-        .orb-3 {
-            width: 400px;
-            height: 400px;
-            background: var(--gradient-3);
-            top: 50%;
-            left: 50%;
-            animation-delay: 14s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            33% { transform: translate(50px, -60px) scale(1.15) rotate(120deg); }
-            66% { transform: translate(-40px, 40px) scale(0.85) rotate(240deg); }
         }
 
         /* Navigation */
@@ -89,142 +24,83 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 25px 60px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            background: rgba(10, 22, 40, 0.85);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
+        nav .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1d1d1f;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
-            gap: 45px;
             list-style: none;
+            gap: 40px;
         }
 
-        .nav-links a {
-            color: var(--text);
+        nav a {
+            color: #1d1d1f;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: all 0.3s;
-            position: relative;
+            font-size: 14px;
+            transition: opacity 0.3s;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-light), var(--accent));
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-light);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        nav a:hover {
+            opacity: 0.6;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 60px;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 82px;
-            font-weight: 900;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #F1F5F9 0%, #60A5FA 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease-out;
-            letter-spacing: -2px;
-            line-height: 1.1;
-        }
-
-        .hero-content .role {
-            font-size: 28px;
-            color: var(--accent-light);
-            margin-bottom: 15px;
-            font-weight: 600;
-            animation: fadeInUp 1s ease-out 0.15s backwards;
-        }
-
-        .hero-content .subtitle {
-            font-size: 20px;
-            color: var(--text-dim);
-            margin-bottom: 45px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease-out 0.3s backwards;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            animation: fadeInUp 1s ease-out 0.45s backwards;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 16px 45px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
         }
 
-        .cta-button.secondary {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: none;
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
 
-        .cta-button.secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--accent-light);
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -232,587 +108,507 @@
             }
         }
 
-        /* Section Styling */
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styles */
         section {
-            padding: 120px 60px;
-            max-width: 1500px;
+            padding: 120px 40px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 52px;
-            font-weight: 800;
-            margin-bottom: 70px;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 60px;
             text-align: center;
-            position: relative;
             letter-spacing: -1px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            border-radius: 3px;
         }
 
         /* About Section */
         .about-content {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            font-size: 19px;
-            color: var(--text-dim);
+            font-size: 20px;
             line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background: var(--card-bg);
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--text-dim);
-            font-size: 15px;
+            color: #666;
         }
 
         /* Experience Section */
         .experience-grid {
             display: grid;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
+            gap: 60px;
         }
 
-        .experience-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            padding: 45px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transition: transform 0.4s;
-        }
-
-        .experience-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .experience-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(96, 165, 250, 0.3);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .experience-header h3 {
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--text);
-        }
-
-        .experience-date {
-            color: var(--accent-light);
-            font-weight: 600;
-            font-size: 15px;
-        }
-
-        .company {
-            color: var(--text-dim);
-            font-size: 18px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .experience-card ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .experience-card li {
-            color: var(--text-dim);
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-            line-height: 1.7;
-        }
-
-        .experience-card li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent-light);
-            font-weight: bold;
-        }
-
-        /* Skills Grid */
-        .skills-container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .skills-category {
-            margin-bottom: 50px;
-        }
-
-        .skills-category h3 {
-            font-size: 22px;
-            margin-bottom: 25px;
-            color: var(--accent-light);
-            font-weight: 700;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .skill-tag {
-            padding: 12px 25px;
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 30px;
-            color: var(--text);
-            font-size: 15px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: rgba(96, 165, 250, 0.15);
-            border-color: var(--accent-light);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(96, 165, 250, 0.2);
-        }
-
-        /* Education Section */
-        .education-grid {
+        .experience-item {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 35px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .education-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
             padding: 40px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s;
+            background: #f5f5f7;
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .education-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(96, 165, 250, 0.3);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .education-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-            color: var(--text);
+        .experience-meta {
+            text-align: right;
         }
 
-        .education-card .university {
-            color: var(--text-dim);
+        .experience-meta h3 {
+            font-size: 24px;
             margin-bottom: 10px;
-            font-size: 16px;
+            color: #667eea;
         }
 
-        .education-card .period {
-            color: var(--accent-light);
-            font-weight: 600;
+        .experience-meta p {
+            color: #666;
             font-size: 14px;
         }
 
-        /* Languages Section */
-        .languages-grid {
+        .experience-details ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .experience-details li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+
+        .experience-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: #f5f5f7;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: white;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .project-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            max-width: 900px;
-            margin: 0 auto;
+            gap: 30px;
         }
 
-        .language-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
+        .skill-category {
             padding: 30px;
+            background: #f5f5f7;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-            transition: all 0.3s;
+            transition: transform 0.3s;
         }
 
-        .language-card:hover {
+        .skill-category:hover {
             transform: translateY(-5px);
-            border-color: rgba(96, 165, 250, 0.3);
         }
 
-        .language-card h4 {
+        .skill-category h3 {
             font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--text);
+            margin-bottom: 20px;
+            color: #667eea;
         }
 
-        .language-card p {
-            color: var(--accent-light);
-            font-weight: 600;
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
         }
 
         /* Contact Section */
         .contact-content {
-            max-width: 700px;
-            margin: 0 auto;
             text-align: center;
-        }
-
-        .contact-content p {
-            font-size: 20px;
-            color: var(--text-dim);
-            margin-bottom: 45px;
-            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 35px;
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 50px;
-            color: var(--text);
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
+            border-radius: 30px;
+            transition: transform 0.3s, background 0.3s;
         }
 
         .contact-link:hover {
-            background: rgba(96, 165, 250, 0.15);
-            border-color: var(--accent-light);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2);
+            transform: translateY(-2px);
+            background: #764ba2;
         }
 
         /* Footer */
         footer {
+            background: #1d1d1f;
+            color: white;
             text-align: center;
-            padding: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--text-dim);
-            font-size: 15px;
+            padding: 40px;
         }
 
-        /* Responsive */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 20px 30px;
-            }
-
-            .nav-links {
-                gap: 20px;
-                font-size: 14px;
-            }
-
-            .hero {
-                padding: 0 30px;
-            }
-
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 48px;
             }
 
-            .hero-content .role {
-                font-size: 22px;
-            }
-
-            .hero-content .subtitle {
-                font-size: 17px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            section {
-                padding: 80px 30px;
+            .hero p {
+                font-size: 18px;
             }
 
             .section-title {
-                font-size: 38px;
+                font-size: 36px;
             }
 
-            .education-grid {
+            .experience-item {
                 grid-template-columns: 1fr;
             }
 
-            .experience-card,
-            .education-card {
-                padding: 30px;
+            .experience-meta {
+                text-align: left;
             }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-    </div>
-
+    <!-- Navigation -->
     <nav>
-        <div class="logo">DK</div>
-        <ul class="nav-links">
-            <li><a href="#about">Hakkımda</a></li>
-            <li><a href="#experience">Deneyim</a></li>
-            <li><a href="#skills">Yetenekler</a></li>
-            <li><a href="#education">Eğitim</a></li>
-            <li><a href="#contact">İletişim</a></li>
-        </ul>
+        <div class="container">
+            <div class="logo">DK</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Deniz Karatepe</h1>
-            <p class="role">Mechanical Engineering Student | R&D Focus</p>
-            <p class="subtitle">Kalite kontrol mühendisliği ve Ar-Ge teknik desteğinde deneyimli, üretim ve inovasyon arasında köprü kuran sonuç odaklı makine mühendisliği öğrencisi</p>
-            <div class="cta-buttons">
-                <a href="#experience" class="cta-button">Deneyimlerime Göz At</a>
-                <a href="#contact" class="cta-button secondary">İletişime Geç</a>
-            </div>
+            <p>Mechanical Engineering Student | R&D Enthusiast</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">Hakkımda</h2>
+        <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <p>Önde gelen üretim şirketlerinde kalite kontrol mühendisliği ve Ar-Ge teknik desteği konusunda uygulamalı deneyime sahip sonuç odaklı Makine Mühendisliği öğrencisiyim. Ar-Ge ve üretim ekipleri arasında köprü kurma, maliyet etkin çözümler geliştirme ve kapsamlı ürün testleri yapma konusunda kanıtlanmış yeteneklerime sahibim.</p>
-            <p>İleri düzey CAD tasarım, hassas ölçüm ekipmanları ve veri odaklı analizde yetenekliyim. ISO 9001 kalite sistemleri, istatistiksel analiz ve fonksiyonlar arası işbirliği konusunda güçlü mühendislik düşüncesi sergiliyorum.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    📞 +90 542 352 4682
-                </div>
-                <div class="contact-item">
-                    📧 denizkaratepe.me@gmail.com
-                </div>
-                <div class="contact-item">
-                    📍 İzmir, Türkiye
-                </div>
-            </div>
+            <p>I am a 4th-year Mechanical Engineering student with a strong passion for R&D, product development, and cost optimization. I have hands-on experience in quality analysis, lab testing, and developing engineering solutions that accelerate workflows and reduce costs. Proficient in CAD applications, MATLAB, and programming tools, I bring a strong analytical mindset to technical challenges and thrive in cross-functional teamwork environments.</p>
         </div>
     </section>
 
-    <section id="experience">
-        <h2 class="section-title">Profesyonel Deneyim</h2>
-        <div class="experience-grid">
-            <div class="experience-card">
-                <div class="experience-header">
-                    <div>
-                        <h3>Technical Antenna Department Intern</h3>
-                        <p class="company">Schneider Electric</p>
-                    </div>
-                    <span class="experience-date">Temmuz 2025 - Ağustos 2025</span>
-                </div>
-                <ul>
-                    <li>Küresel Ar-Ge ekipleriyle işbirliği yaparak yerel üretim ürünlerini araştırma, test ve analiz yoluyla geliştirdim</li>
-                    <li>Ar-Ge ve üretim departmanları arasında teknik irtibat görevi üstlenerek kusursuz iletişim ve proje yürütme sağladım</li>
-                    <li>Ürün performansını iyileştirmek için detaylı testler gerçekleştirdim ve teknik raporlar hazırladım</li>
-                </ul>
-            </div>
-
-            <div class="experience-card">
-                <div class="experience-header">
-                    <div>
-                        <h3>Quality Control Engineering Intern</h3>
-                        <p class="company">SAY Renewable Energy</p>
-                    </div>
-                    <span class="experience-date">Temmuz 2024</span>
-                </div>
-                <ul>
-                    <li>Kapsamlı kalite kontrolleri için CMM, mikrometre, komparatör, profil projektör ve UMPAS sistemleri dahil hassas ölçüm ekipmanlarını kullandım</li>
-                    <li>Yüzey pürüzlülüğü ölçümü, geometrik boyutlandırma ve toleranslama (GD&T) ve teknik çizim yorumlama konusunda uzmanlık kazandım</li>
-                    <li>Üretim iş akışlarını ve kalite kontrol noktalarını anlamak için işleme üretim süreçlerini gözlemledim ve analiz ettim</li>
-                    <li>Sistematik mühendislik problem çözme metodolojileri uygulayarak kusurlu parça analizi yaptım</li>
-                    <li>ISO 9001 kalite yönetimi ilkelerini pratik üretim ortamında uyguladım</li>
-                    <li>Toplanan kalite verilerinde trendleri ve iyileştirme fırsatlarını belirlemek için istatistiksel analiz gerçekleştirdim</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title">Teknik Yetenekler</h2>
-        <div class="skills-container">
-            <div class="skills-category">
-                <h3>CAD/CAM Yazılımları</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">SolidWorks</span>
-                    <span class="skill-tag">Fusion 360</span>
-                    <span class="skill-tag">PTC Creo</span>
-                    <span class="skill-tag">AutoCAD</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Programlama Dilleri</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">MATLAB</span>
-                    <span class="skill-tag">C++</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Kalite Kontrol Ekipmanları</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">CMM</span>
-                    <span class="skill-tag">Mikrometreler</span>
-                    <span class="skill-tag">Profil Projektör</span>
-                    <span class="skill-tag">Komparatörler</span>
-                    <span class="skill-tag">UMPAS</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Kalite Standartları</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">ISO 9001</span>
-                    <span class="skill-tag">GD&T</span>
-                    <span class="skill-tag">İstatistiksel Analiz</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>İş Uygulamaları</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Microsoft Office Suite</span>
-                    <span class="skill-tag">Advanced Excel</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Üretim Bilgisi</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">İşleme Süreçleri</span>
-                    <span class="skill-tag">Üretim İş Akışları</span>
-                    <span class="skill-tag">Ürün Geliştirme & Test</span>
-                </div>
-            </div>
-
-            <div class="skills-category">
-                <h3>Temel Yetkinlikler</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Fonksiyonlar Arası Takım İşbirliği</span>
-                    <span class="skill-tag">Teknik İletişim</span>
-                    <span class="skill-tag">Mühendislik Problem Çözme</span>
-                    <span class="skill-tag">Veri Odaklı Analiz</span>
-                    <span class="skill-tag">Maliyet Optimizasyon Stratejileri</span>
-                    <span class="skill-tag">Ar-Ge Desteği & İnovasyon</span>
-                    <span class="skill-tag">Kalite Yönetim Sistemleri</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Education Section -->
     <section id="education">
-        <h2 class="section-title">Eğitim</h2>
-        <div class="education-grid">
-            <div class="education-card">
-                <h3>Makine Mühendisliği Lisans</h3>
-                <p class="university">Yaşar Üniversitesi, İzmir, Türkiye</p>
-                <p class="period">2022 - Günümüz</p>
-                <p style="color: var(--text-dim); margin-top: 15px; font-size: 15px;">Mezuniyet Beklentisi: 2026 | 4. Sınıf Öğrencisi</p>
+        <h2 class="section-title">Education</h2>
+        <div class="experience-grid">
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <h3>Yaşar University</h3>
+                    <p>Faculty of Engineering</p>
+                    <p>2022 - Present</p>
+                </div>
+                <div class="experience-details">
+                    <p style="font-size: 18px; color: #667eea; font-weight: 600; margin-bottom: 10px;">Mechanical Engineering</p>
+                    <p style="color: #666;">Pursuing B.Sc. in Mechanical Engineering with focus on thermal systems, CAD design, and manufacturing processes.</p>
+                </div>
             </div>
 
-            <div class="education-card">
-                <h3>Yönetim Bilişim Sistemleri Lisans</h3>
-                <p class="university">İstanbul Üniversitesi - Açık Öğretim, Türkiye</p>
-                <p class="period">2022 - Günümüz</p>
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <h3>Istanbul University</h3>
+                    <p>Distance Education Faculty</p>
+                    <p>2022 - Present</p>
+                </div>
+                <div class="experience-details">
+                    <p style="font-size: 18px; color: #667eea; font-weight: 600; margin-bottom: 10px;">Management Information Systems</p>
+                    <p style="color: #666;">Complementing engineering studies with business and information systems knowledge for a comprehensive skill set.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="languages" style="padding-top: 60px;">
-        <h2 class="section-title">Diller</h2>
-        <div class="languages-grid">
-            <div class="language-card">
-                <h4>🇹🇷 Türkçe</h4>
-                <p>Anadil</p>
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <h3>Schneider Electric</h3>
+                    <p>Technical Antenna Intern</p>
+                    <p>Summer 2025 | Manisa</p>
+                </div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Developed a comprehensive product database for component analysis enabling faster R&D cost studies and technical decision-making</li>
+                        <li>Contributed to lab testing, quality control, and production workflows, gaining hands-on experience in local manufacturing and product development cycles</li>
+                        <li>Adapted quickly to electrical systems and switchgear technology in a cross-functional R&D environment, contributing to design reviews and technical documentation using PTC Creo</li>
+                    </ul>
+                </div>
             </div>
-            <div class="language-card">
-                <h4>🇷🇺 Rusça</h4>
-                <p>Anadil</p>
-            </div>
-            <div class="language-card">
-                <h4>🇬🇧 İngilizce</h4>
-                <p>İleri Düzey (C1)</p>
-            </div>
-            <div class="language-card">
-                <h4>🇺🇦 Ukraynaca</h4>
-                <p>Orta Düzey (A2)</p>
+
+            <div class="experience-item">
+                <div class="experience-meta">
+                    <h3>Say Renewable Energy</h3>
+                    <p>Quality Control Intern</p>
+                    <p>Summer 2024 | İzmir</p>
+                </div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Conducted quality control processes and material analysis on mechanical components, gaining hands-on experience in specification testing and quality management systems</li>
+                        <li>Contributed to production process optimization by identifying and analyzing error patterns, supporting initiatives to reduce defect rates</li>
+                        <li>Acquired in-depth knowledge of quality standards and test procedures used in renewable energy equipment manufacturing</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">🔧</div>
+                <div class="project-content">
+                    <h3>Heat Exchanger Design & Optimization</h3>
+                    <p>Designed and optimized a shell-and-tube heat exchanger for sunflower oil heating applications. Performed comprehensive thermal analysis including LMTD calculations, flow velocity optimization, and pressure drop analysis using MATLAB. Conducted simple economic analysis for material selection and manufacturing cost estimation.</p>
+                    <span class="project-badge">Completed</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">🤖</div>
+                <div class="project-content">
+                    <h3>VR-Controlled Quadruped Robot</h3>
+                    <p>Defense-focused VR-controlled quadruped robot project. Designing mechanical structure and developing control algorithms for remote operation capabilities.</p>
+                    <span class="project-badge">Ongoing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>CAD Programs</h3>
+                <ul>
+                    <li>Fusion360</li>
+                    <li>AutoCAD</li>
+                    <li>SolidWorks</li>
+                    <li>PTC Creo</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Programming & Analysis</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>MATLAB</li>
+                    <li>C++</li>
+                    <li>MS Office</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Product Development</h3>
+                <ul>
+                    <li>Cost Analysis</li>
+                    <li>Component Analysis</li>
+                    <li>Technical Documentation</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Quality & Manufacturing</h3>
+                <ul>
+                    <li>Quality Control</li>
+                    <li>Testing Procedures</li>
+                    <li>Production Support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">İletişime Geçin</h2>
+        <h2 class="section-title">Let's Connect</h2>
         <div class="contact-content">
-            <p>Ar-Ge fırsatları, proje işbirlikleri veya mühendislik çözümleri hakkında konuşmak ister misiniz? Benimle iletişime geçmekten çekinmeyin!</p>
+            <p style="font-size: 20px; color: #666; margin-bottom: 20px;">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
             <div class="contact-links">
-                <a href="mailto:denizkaratepe.me@gmail.com" class="contact-link">
-                    📧 Email Gönder
-                </a>
-                <a href="tel:+905423524682" class="contact-link">
-                    📞 Ara
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="contact-link">
+                <a href="mailto:denizkaratepe.me@gmail.com" class="contact-link">Email Me</a>
+            </div>
+            <p style="font-size: 16px; color: #999; margin-top: 20px;">
+                denizkaratepe.me@gmail.com
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Deniz Karatepe. Built with passion.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.8)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-item, .project-card, .skill-category').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
